@@ -1,0 +1,391 @@
+/* ============================================
+   KinetoShop - Stiluri CSS
+   Design medical, culori calme, responsive
+   ============================================ */
+
+/* Variabile CSS pentru culori și spacing */
+:root {
+    --primary-color: #2a9d8f;      /* Verde medical */
+    --primary-dark: #238b7e;
+    --secondary-color: #264653;     /* Albastru închis */
+    --accent-color: #e9f5f3;        /* Verde foarte deschis */
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray: #6c757d;
+    --text-color: #2d3436;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset și stiluri de bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--gray-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ============================================
+   SECȚIUNEA PRODUSE
+   ============================================ */
+.produse-section {
+    padding: 80px 20px;
+    background: var(--gray-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 50px;
+}
+
+/* Grid pentru carduri produse */
+.produse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Card produs */
+.produs-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.produs-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.produs-imagine {
+    height: 220px;
+    overflow: hidden;
+}
+
+.produs-imagine img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.produs-card:hover .produs-imagine img {
+    transform: scale(1.05);
+}
+
+.produs-info {
+    padding: 25px;
+}
+
+.produs-nume {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.produs-descriere {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.produs-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.produs-pret {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.btn-cumpara {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-cumpara:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   SECȚIUNEA DESPRE / FEATURES
+   ============================================ */
+.despre-section {
+    padding: 80px 20px;
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+}
+
+.feature h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: var(--gray);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 50px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand .logo-icon,
+.footer-brand .logo-text {
+    color: var(--white);
+}
+
+.footer-brand p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.footer-contact h4 {
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        gap: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .produse-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .produs-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-cumpara {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - TELEFON
+   ============================================ */
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .produse-section,
+    .despre-section {
+        padding: 50px 15px;
+    }
+    
+    .produse-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

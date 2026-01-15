@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinetoShop - Produse pentru Kinetoterapie</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚕</span>
+                <span class="logo-text">KinetoShop</span>
+            </div>
+            <nav class="nav">
+                <a href="#produse">Produse</a>
+                <a href="#despre">Despre Noi</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Produse de Calitate pentru Recuperare</h1>
+            <p>Echipamente profesionale de kinetoterapie pentru acasă și cabinet</p>
+            <a href="#produse" class="btn-hero">Vezi Produsele</a>
+        </div>
+    </section>
+
+    <!-- Secțiunea Produse -->
+    <section id="produse" class="produse-section">
+        <div class="container">
+            <h2 class="section-title">Produsele Noastre</h2>
+            <p class="section-subtitle">Selectate cu grijă pentru recuperarea ta</p>
+            
+            <div class="produse-grid">
+                <!-- Iterare prin lista de produse cu Thymeleaf -->
+                <article class="produs-card" th:each="produs : ${produse}">
+                    <div class="produs-imagine">
+                        <img th:src="${produs.imagine}" th:alt="${produs.nume}">
+                    </div>
+                    <div class="produs-info">
+                        <h3 class="produs-nume" th:text="${produs.nume}">Nume Produs</h3>
+                        <p class="produs-descriere" th:text="${produs.descriere}">Descriere produs</p>
+                        <div class="produs-footer">
+                            <span class="produs-pret" th:text="${#numbers.formatDecimal(produs.pret, 1, 2)} + ' Lei'">0.00 Lei</span>
+                            <a th:href="${produs.linkCumparare}" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="btn-cumpara">
+                                Cumpără Produsul
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secțiunea Despre -->
+    <section id="despre" class="despre-section">
+        <div class="container">
+            <h2 class="section-title">De Ce Să Ne Alegi</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Produse Certificate</h3>
+                    <p>Toate produsele sunt certificate și recomandate de specialiști</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Livrare Rapidă</h3>
+                    <p>Livrare în toată țara în 24-48 ore</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Suport Specializat</h3>
+                    <p>Consiliere gratuită de la kinetoterapeuți</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚕</span>
+                    <span class="logo-text">KinetoShop</span>
+                    <p>Partenerul tău în recuperare</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📧 contact@kinetoshop.ro</p>
+                    <p>📞 0721 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KinetoShop. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+ro/kineto/KinetoApplication.class
+ro/kineto/model/Produs.class
+ro/kineto/controller/HomeController.class
+ro/kineto/service/ProdusService.class
