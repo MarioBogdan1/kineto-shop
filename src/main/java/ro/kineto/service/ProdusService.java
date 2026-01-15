@@ -48,7 +48,7 @@ public class ProdusService {
             "Bandă Elastică Rezistență Medie",
             "Bandă elastică ideală pentru exerciții de recuperare și tonifiere musculară. Rezistență medie, potrivită pentru începători.",
             "Banda elastică este un instrument esențial în kinetoterapie, folosită pentru exerciții de recuperare, tonifiere și întărire musculară. Această bandă cu rezistență medie este perfectă pentru începători și pentru cei care doresc să-și îmbunătățească flexibilitatea. Fabricată din latex natural de înaltă calitate, oferă o rezistență uniformă pe toată lungimea. Poate fi utilizată pentru exerciții ale membrelor superioare și inferioare, fiind ideală pentru recuperarea după accidentări.",
-            "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400",
+            "/images/banda.jpg",
             "https://www.emag.ro",
             45.99
         ));
@@ -59,7 +59,7 @@ public class ProdusService {
             "Minge Pilates 65cm",
             "Minge de exerciții pentru pilates și kinetoterapie. Perfectă pentru îmbunătățirea echilibrului și posturii.",
             "Mingea de pilates de 65cm este un echipament versatil, indispensabil pentru exercițiile de stabilitate și core. Fabricată din PVC anti-explozie, suportă până la 300kg. Ideală pentru exerciții de echilibru, stretching, yoga și recuperare post-traumatică. Include pompă de umflare. Suprafața antiderapantă asigură siguranța în timpul exercițiilor. Recomandată de kinetoterapeuți pentru îmbunătățirea posturii și întărirea musculaturii profunde.",
-            "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400",
+            "/images/mingeF.jpg",
             "https://www.decathlon.ro",
             89.99
         ));
@@ -70,7 +70,7 @@ public class ProdusService {
             "Foam Roller Masaj",
             "Roller din spumă pentru auto-masaj și eliberare miofascială. Reduce tensiunea musculară și accelerează recuperarea.",
             "Foam roller-ul este instrumentul perfect pentru auto-masaj și eliberare miofascială. Cu o lungime de 45cm și un diametru de 15cm, acest roller din spumă EVA de înaltă densitate ajută la reducerea tensiunii musculare, îmbunătățirea circulației și accelerarea recuperării după antrenament. Textura cu relief stimulează punctele trigger și eliberează nodulii musculari. Recomandat atât pentru sportivi cât și pentru persoanele cu dureri cronice de spate.",
-            "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=400",
+            "/images/rolaMasaj.jpg",
             "https://www.emag.ro",
             65.00
         ));
@@ -103,7 +103,7 @@ public class ProdusService {
             "Aparat TENS Electrostimulare",
             "Dispozitiv de electrostimulare pentru ameliorarea durerii și recuperare musculară. Include 4 electrozi.",
             "Aparatul TENS (Transcutaneous Electrical Nerve Stimulation) este un dispozitiv medical pentru ameliorarea durerii fără medicamente. Cu 8 moduri de stimulare și 20 de nivele de intensitate, poate fi personalizat pentru diferite tipuri de durere. Include 4 electrozi autoadezivi reutilizabili. Eficient pentru dureri de spate, gât, umeri, articulații și dureri musculare. Compact și portabil, funcționează cu baterii AAA. Aprobat medical și recomandat de specialiști.",
-            "https://images.unsplash.com/photo-1559757175-7cb057fba93c?w=400",
+            "/images/TENS.jpeg",
             "https://www.emag.ro",
             189.99
         ));
@@ -114,7 +114,7 @@ public class ProdusService {
             "Set Mingi Masaj Spiky",
             "Set de 3 mingi cu țepi pentru masaj și reflexoterapie. Diferite dimensiuni pentru diverse zone ale corpului.",
             "Setul include 3 mingi de masaj cu țepi de diferite dimensiuni (6cm, 8cm, 10cm) pentru a acoperi toate zonele corpului. Țepii stimulează circulația sanguină și ajută la eliberarea tensiunii musculare. Perfecte pentru masajul picioarelor, palmelor, spatelui și gâtului. Fabricate din silicon medical, sunt durabile și ușor de curățat. Ideale pentru reflexoterapie și auto-masaj zilnic.",
-            "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400",
+            "/images/mingiSpiky.jpg",
             "https://www.emag.ro",
             35.00
         ));
@@ -125,7 +125,7 @@ public class ProdusService {
             "Corector Postural Ajustabil",
             "Corector de postură reglabil pentru spate și umeri. Previne durerile de spate și îmbunătățește postura.",
             "Corectorul postural ajustabil este conceput pentru a corecta postura și a preveni durerile de spate cauzate de poziția incorectă. Cu bretele reglabile și material respirabil, oferă confort pe toată durata purtării. Discret sub haine, poate fi purtat la birou, acasă sau în timpul activităților zilnice. Ajută la alinierea coloanei vertebrale și la reducerea tensiunii din zona umerilor. Recomandat pentru persoanele care stau mult la birou.",
-            "https://images.unsplash.com/photo-1616279969862-60c1c8c89b94?w=400",
+            "/images/postura.jpg",
             "https://www.decathlon.ro",
             89.00
         ));
@@ -136,7 +136,7 @@ public class ProdusService {
             "Set 5 Benzi Rezistență",
             "Set complet de 5 benzi elastice cu rezistențe diferite. Include ancoră de ușă și mânere.",
             "Setul profesional include 5 benzi elastice cu rezistențe progresive (2kg, 4kg, 7kg, 9kg, 14kg), codificate prin culori. Include mânere ergonomice, ancoră de ușă, curele pentru glezne și geantă de transport. Perfect pentru antrenament complet acasă sau în deplasare. Benzile pot fi combinate pentru a crește rezistența. Ideale pentru recuperare, tonifiere și antrenament de forță. Latex natural de înaltă calitate.",
-            "https://images.unsplash.com/photo-1598632640487-6ea4a4e8b963?w=400",
+            "/images/benziElastice.jpg",
             "https://www.emag.ro",
             149.99
         ));
@@ -147,7 +147,7 @@ public class ProdusService {
             "Pernă Cervicală Ortopedică",
             "Pernă ergonomică cu memorie pentru suport cervical optim. Reduce durerile de gât și îmbunătățește somnul.",
             "Perna cervicală ortopedică este fabricată din spumă cu memorie de înaltă densitate care se adaptează perfect conturului gâtului și capului. Designul ergonomic cu două înălțimi (10cm și 12cm) permite alegerea poziției optime. Husă din bambus hipoalergenică și lavabilă. Reduce durerile de gât, ameliorează migrenele și îmbunătățește calitatea somnului. Recomandată de ortopezi și kinetoterapeuți.",
-            "https://images.unsplash.com/photo-1631157769667-797d6a222d0f?w=400",
+            "/images/pernaCervicala.jpg",
             "https://www.emag.ro",
             159.00
         ));
@@ -169,7 +169,7 @@ public class ProdusService {
             "Pistol Masaj Percuție",
             "Aparat profesional de masaj cu percuție pentru relaxare musculară profundă. 6 capete interschimbabile.",
             "Pistolul de masaj cu percuție oferă relaxare musculară profundă prin vibrații de înaltă frecvență (până la 3200 percuții/minut). Include 6 capete interschimbabile pentru diferite grupe musculare și 6 nivele de intensitate. Motor silențios sub 45dB. Baterie Li-ion cu autonomie de 6 ore. Ideal pentru recuperare post-antrenament, ameliorarea durerii musculare și îmbunătățirea circulației. Design ergonomic pentru auto-masaj facil.",
-            "https://images.unsplash.com/photo-1617952739858-28043cecdae3?w=400",
+            "/images/pistoMasaj.jpg",
             "https://www.emag.ro",
             299.00
         ));

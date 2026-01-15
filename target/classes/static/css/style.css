@@ -576,6 +576,26 @@ body {
     background: var(--white);
 }
 
+.despre-text {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.despre-text p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.despre-slogan {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    font-size: 1.2rem !important;
+    margin-top: 30px !important;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
