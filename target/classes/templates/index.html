@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinetoShop - Produse pentru Kinetoterapie</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,17 +13,26 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
+            <a href="/" class="logo">
                 <span class="logo-icon">⚕</span>
                 <span class="logo-text">KinetoShop</span>
-            </div>
+            </a>
             <nav class="nav">
                 <a href="#produse">Produse</a>
                 <a href="#despre">Despre Noi</a>
                 <a href="#contact">Contact</a>
+                <!-- Zona autentificare -->
+                <div class="auth-area" th:if="${userEmail != null}">
+                    <span class="user-email" th:text="${userEmail}"></span>
+                    <a href="/logout" class="btn-logout">Ieși</a>
+                </div>
+                <a th:if="${userEmail == null}" href="/login" class="btn-login">Autentificare</a>
             </nav>
         </div>
     </header>
+
+    <!-- Mesaj succes -->
+    <div class="alert alert-success" th:if="${success}" th:text="${success}"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -42,24 +50,20 @@
             <p class="section-subtitle">Selectate cu grijă pentru recuperarea ta</p>
             
             <div class="produse-grid">
-                <!-- Iterare prin lista de produse cu Thymeleaf -->
                 <article class="produs-card" th:each="produs : ${produse}">
-                    <div class="produs-imagine">
-                        <img th:src="${produs.imagine}" th:alt="${produs.nume}">
-                    </div>
-                    <div class="produs-info">
-                        <h3 class="produs-nume" th:text="${produs.nume}">Nume Produs</h3>
-                        <p class="produs-descriere" th:text="${produs.descriere}">Descriere produs</p>
-                        <div class="produs-footer">
-                            <span class="produs-pret" th:text="${#numbers.formatDecimal(produs.pret, 1, 2)} + ' Lei'">0.00 Lei</span>
-                            <a th:href="${produs.linkCumparare}" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="btn-cumpara">
-                                Cumpără Produsul
-                            </a>
+                    <a th:href="@{/produs/{id}(id=${produs.id})}" class="produs-link">
+                        <div class="produs-imagine">
+                            <img th:src="${produs.imagine}" th:alt="${produs.nume}">
                         </div>
-                    </div>
+                        <div class="produs-info">
+                            <h3 class="produs-nume" th:text="${produs.nume}">Nume Produs</h3>
+                            <p class="produs-descriere" th:text="${produs.descriereScurta}">Descriere produs</p>
+                            <div class="produs-footer">
+                                <span class="produs-pret" th:text="${#numbers.formatDecimal(produs.pret, 1, 2)} + ' Lei'">0.00 Lei</span>
+                                <span class="btn-detalii">Vezi Detalii →</span>
+                            </div>
+                        </div>
+                    </a>
                 </article>
             </div>
         </div>

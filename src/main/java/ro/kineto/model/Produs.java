@@ -8,19 +8,22 @@ public class Produs {
     
     private Long id;
     private String nume;
-    private String descriere;
-    private String imagine;      // URL sau cale către imagine
-    private String linkCumparare; // Link extern pentru achiziție
+    private String descriereScurta;  // Pentru carduri
+    private String descriereLunga;   // Pentru pagina de detalii
+    private String imagine;          // URL sau cale către imagine
+    private String linkCumparare;    // Link extern pentru achiziție
     private Double pret;
     
     // Constructor gol
     public Produs() {}
     
-    // Constructor cu toți parametrii
-    public Produs(Long id, String nume, String descriere, String imagine, String linkCumparare, Double pret) {
+    // Constructor complet
+    public Produs(Long id, String nume, String descriereScurta, String descriereLunga, 
+                  String imagine, String linkCumparare, Double pret) {
         this.id = id;
         this.nume = nume;
-        this.descriere = descriere;
+        this.descriereScurta = descriereScurta;
+        this.descriereLunga = descriereLunga;
         this.imagine = imagine;
         this.linkCumparare = linkCumparare;
         this.pret = pret;
@@ -33,8 +36,11 @@ public class Produs {
     public String getNume() { return nume; }
     public void setNume(String nume) { this.nume = nume; }
     
-    public String getDescriere() { return descriere; }
-    public void setDescriere(String descriere) { this.descriere = descriere; }
+    public String getDescriereScurta() { return descriereScurta; }
+    public void setDescriereScurta(String descriereScurta) { this.descriereScurta = descriereScurta; }
+    
+    public String getDescriereLunga() { return descriereLunga; }
+    public void setDescriereLunga(String descriereLunga) { this.descriereLunga = descriereLunga; }
     
     public String getImagine() { return imagine; }
     public void setImagine(String imagine) { this.imagine = imagine; }

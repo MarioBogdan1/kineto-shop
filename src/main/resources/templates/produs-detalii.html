@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${produs.nume} + ' - KinetoShop'">Produs - KinetoShop</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚕</span>
+                <span class="logo-text">KinetoShop</span>
+            </a>
+            <nav class="nav">
+                <a href="/#produse">Produse</a>
+                <a href="/#despre">Despre Noi</a>
+                <a href="/#contact">Contact</a>
+                <div class="auth-area" th:if="${userEmail != null}">
+                    <span class="user-email" th:text="${userEmail}"></span>
+                    <a href="/logout" class="btn-logout">Ieși</a>
+                </div>
+                <a th:if="${userEmail == null}" href="/login" class="btn-login">Autentificare</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Acasă</a> / <a href="/#produse">Produse</a> / <span th:text="${produs.nume}">Produs</span>
+        </div>
+    </div>
+
+    <!-- Detalii Produs -->
+    <section class="produs-detalii-section">
+        <div class="container">
+            <div class="produs-detalii-grid">
+                <!-- Imagine produs -->
+                <div class="produs-detalii-imagine">
+                    <img th:src="${produs.imagine}" th:alt="${produs.nume}">
+                </div>
+                
+                <!-- Informații produs -->
+                <div class="produs-detalii-info">
+                    <h1 class="produs-detalii-nume" th:text="${produs.nume}">Nume Produs</h1>
+                    
+                    <div class="produs-detalii-pret">
+                        <span th:text="${#numbers.formatDecimal(produs.pret, 1, 2)} + ' Lei'">0.00 Lei</span>
+                    </div>
+                    
+                    <div class="produs-detalii-descriere">
+                        <h3>Descriere</h3>
+                        <p th:text="${produs.descriereLunga}">Descriere detaliată a produsului</p>
+                    </div>
+                    
+                    <div class="produs-detalii-actiuni">
+                        <a th:href="${produs.linkCumparare}" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn-cumpara-mare">
+                            🛒 Cumpără Produsul
+                        </a>
+                        <a href="/#produse" class="btn-inapoi">← Înapoi la produse</a>
+                    </div>
+                    
+                    <div class="produs-garantii">
+                        <div class="garantie">
+                            <span>✓</span> Produs original
+                        </div>
+                        <div class="garantie">
+                            <span>🚚</span> Livrare rapidă
+                        </div>
+                        <div class="garantie">
+                            <span>↩</span> Retur în 14 zile
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 KinetoShop. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

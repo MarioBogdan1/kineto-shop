@@ -3,23 +3,23 @@
    Design medical, culori calme, responsive
    ============================================ */
 
-/* Variabile CSS pentru culori și spacing */
 :root {
-    --primary-color: #2a9d8f;      /* Verde medical */
+    --primary-color: #2a9d8f;
     --primary-dark: #238b7e;
-    --secondary-color: #264653;     /* Albastru închis */
-    --accent-color: #e9f5f3;        /* Verde foarte deschis */
+    --secondary-color: #264653;
+    --accent-color: #e9f5f3;
     --white: #ffffff;
     --gray-light: #f8f9fa;
     --gray: #6c757d;
     --text-color: #2d3436;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
     --radius: 12px;
     --transition: all 0.3s ease;
 }
 
-/* Reset și stiluri de bază */
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +44,27 @@ body {
 }
 
 /* ============================================
+   ALERTS
+   ============================================ */
+.alert {
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.alert-success {
+    background: var(--success-color);
+    color: var(--white);
+}
+
+.alert-error {
+    background: var(--error-color);
+    color: var(--white);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+/* ============================================
    HEADER
    ============================================ */
 .header {
@@ -65,6 +86,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
 
 .logo-icon {
@@ -80,6 +102,7 @@ body {
 
 .nav {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
@@ -92,6 +115,49 @@ body {
 
 .nav a:hover {
     color: var(--primary-color);
+}
+
+/* Auth area în header */
+.auth-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn-login, .btn-logout {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-login {
+    background: var(--primary-color);
+    color: var(--white) !important;
+}
+
+.btn-login:hover {
+    background: var(--primary-dark);
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid var(--gray);
+    color: var(--gray) !important;
+    font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+    border-color: var(--error-color);
+    color: var(--error-color) !important;
 }
 
 /* ============================================
@@ -153,7 +219,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* Grid pentru carduri produse */
 .produse-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -172,6 +237,12 @@ body {
 .produs-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
+}
+
+.produs-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .produs-imagine {
@@ -221,6 +292,12 @@ body {
     color: var(--primary-color);
 }
 
+.btn-detalii {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 .btn-cumpara {
     display: inline-block;
     background: var(--primary-color);
@@ -236,6 +313,259 @@ body {
 .btn-cumpara:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
+}
+
+/* ============================================
+   PAGINA DETALII PRODUS
+   ============================================ */
+.breadcrumb {
+    background: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: var(--gray);
+}
+
+.produs-detalii-section {
+    padding: 60px 20px;
+    background: var(--gray-light);
+}
+
+.produs-detalii-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.produs-detalii-imagine {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.produs-detalii-imagine img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.produs-detalii-info {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.produs-detalii-nume {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.produs-detalii-pret {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.produs-detalii-descriere h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.produs-detalii-descriere p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.produs-detalii-actiuni {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-cumpara-mare {
+    display: block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn-cumpara-mare:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-inapoi {
+    color: var(--gray);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-inapoi:hover {
+    color: var(--primary-color);
+}
+
+.produs-garantii {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.garantie {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.garantie span {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   PAGINA LOGIN
+   ============================================ */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    padding: 40px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 50px 40px;
+    box-shadow: var(--shadow-hover);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.login-header h1 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: var(--gray);
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 8px;
+}
+
+.btn-login-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-login-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.login-footer {
+    text-align: center;
+}
+
+.login-footer a {
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    color: var(--primary-color);
 }
 
 /* ============================================
@@ -333,7 +663,18 @@ body {
     }
     
     .nav {
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .auth-area {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        width: 100%;
+        justify-content: center;
     }
     
     .hero h1 {
@@ -353,9 +694,13 @@ body {
         align-items: flex-start;
     }
     
-    .btn-cumpara {
-        width: 100%;
-        text-align: center;
+    .produs-detalii-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .produs-detalii-info {
+        padding: 30px;
     }
 }
 
@@ -382,6 +727,18 @@ body {
     
     .produse-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .produs-detalii-nume {
+        font-size: 1.5rem;
+    }
+    
+    .produs-detalii-pret {
+        font-size: 2rem;
+    }
+    
+    .login-card {
+        padding: 30px 25px;
     }
     
     .footer-content {
