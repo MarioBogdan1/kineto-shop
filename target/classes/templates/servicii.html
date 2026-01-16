@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicii - KinetoShop</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚕</span>
+                <span class="logo-text">KinetoShop</span>
+            </a>
+            <nav class="nav">
+                <a href="/#produse">Produse</a>
+                <a href="/servicii">Servicii</a>
+                <a href="/#despre">Despre Noi</a>
+                <a href="/#contact">Contact</a>
+                <div class="auth-area" th:if="${userEmail != null}">
+                    <span class="user-email" th:text="${userEmail}"></span>
+                    <a href="/logout" class="btn-logout">Ieși</a>
+                </div>
+                <a th:if="${userEmail == null}" href="/login" class="btn-login">Autentificare</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Serviciile Noastre</h1>
+            <p>Programe personalizate de kinetoterapie pentru nevoile tale</p>
+        </div>
+    </section>
+
+    <!-- Secțiunea Servicii -->
+    <section class="servicii-section">
+        <div class="container">
+            <h2 class="section-title">Oferim Soluții Complete de Recuperare</h2>
+            <p class="section-subtitle">Fiecare program este adaptat nevoilor individuale</p>
+            
+            <div class="servicii-grid">
+                <article class="serviciu-card" th:each="serviciu : ${servicii}">
+                    <div class="serviciu-header">
+                        <div class="serviciu-icon" th:text="${serviciu.icon}">🏥</div>
+                        <h3 class="serviciu-nume" th:text="${serviciu.nume}">Nume Serviciu</h3>
+                    </div>
+                    
+                    <div class="serviciu-content">
+                        <p class="serviciu-descriere" th:text="${serviciu.descriere}">Descriere serviciu</p>
+                        
+                        <div class="serviciu-beneficii">
+                            <h4>Beneficii:</h4>
+                            <ul>
+                                <li th:each="beneficiu : ${serviciu.beneficii}" th:text="${beneficiu}">Beneficiu</li>
+
+                            </ul>
+                        </div>
+                        
+                        <div class="serviciu-adresare">
+                            <h4>Cui se adresează:</h4>
+                            <p th:text="${serviciu.cuiSeAdreseaza}">Descriere persoane țintă</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ai nevoie de consiliere?</h2>
+            <p>Contactează-ne pentru o consultație gratuită</p>
+            <a href="/#contact" class="btn-hero">Contactează-ne</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚕</span>
+                    <span class="logo-text">KinetoShop</span>
+                    <p>Partenerul tău în recuperare</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📧 contact@kinetoshop.ro</p>
+                    <p>📞 0721 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KinetoShop. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

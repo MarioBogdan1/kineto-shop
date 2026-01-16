@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ro.kineto.model.Produs;
 import ro.kineto.service.ProdusService;
+import ro.kineto.service.ServiciuService;
 
 import jakarta.servlet.http.HttpSession;
 import java.util.Optional;
@@ -20,9 +21,11 @@ import java.util.Optional;
 public class HomeController {
     
     private final ProdusService produsService;
+    private final ServiciuService serviciuService;
     
-    public HomeController(ProdusService produsService) {
+    public HomeController(ProdusService produsService, ServiciuService serviciuService) {
         this.produsService = produsService;
+        this.serviciuService = serviciuService;
     }
     
     /**
@@ -91,4 +94,14 @@ public class HomeController {
         session.removeAttribute("userEmail");
         return "redirect:/";
     }
-}
+    
+    /**
+     * Pagina Servicii
+     */
+//     @GetMapping("/servicii")
+//     public String servicii(Model model, HttpSession session) {
+//         model.addAttribute("servicii", serviciuService.getToateServiciile());
+//         model.addAttribute("userEmail", session.getAttribute("userEmail"));
+//         return "servicii";
+//     }
+ }
