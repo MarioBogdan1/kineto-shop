@@ -16,9 +16,9 @@ public class HomeController {
         this.produsService = produsService;
     }
 
-    // 🔹 Asta pune automat userEmail în TOATE paginile
+    // 👉 disponibil în toate paginile
     @ModelAttribute
-    public void addUserEmail(Model model, HttpSession session) {
+    public void addUserEmailToModel(Model model, HttpSession session) {
         model.addAttribute("userEmail", session.getAttribute("userEmail"));
     }
 
@@ -37,9 +37,10 @@ public class HomeController {
     }
 
     @PostMapping("/login")
-    public String processLogin(@RequestParam String email,
-                               HttpSession session,
-                               RedirectAttributes redirectAttributes) {
+    public String processLogin(
+            @RequestParam String email,
+            HttpSession session,
+            RedirectAttributes redirectAttributes) {
 
         if (email == null || email.isBlank() || !email.contains("@")) {
             redirectAttributes.addFlashAttribute("error", "Email invalid");
