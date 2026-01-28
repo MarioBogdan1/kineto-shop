@@ -1,7 +1,10 @@
+/Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/controller/CabineteController.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/controller/HomeController.java
+/Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/service/CabinetMedicalService.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/controller/ServiciiController.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/model/Produs.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/model/Serviciu.java
+/Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/model/CabinetMedical.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/service/ProdusService.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/service/ServiciuService.java
 /Users/marioiancu/Desktop/kineto.ro/src/main/java/ro/kineto/KinetoApplication.java

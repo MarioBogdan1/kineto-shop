@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinete Medicale - KinetoShop</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚕</span>
+                <span class="logo-text">KinetoShop</span>
+            </a>
+            <nav class="nav">
+                <a href="/#produse">Produse</a>
+                <a href="/servicii">Servicii</a>
+                <a href="/cabinete" class="nav-active">Cabinete Medicale</a>
+                <a href="/#despre">Despre Noi</a>
+                <a href="/#contact">Contact</a>
+                <!-- Zona autentificare -->
+                <div class="auth-area" th:if="${userEmail != null}">
+                    <span class="user-email" th:text="${userEmail}"></span>
+                    <a href="/logout" class="btn-logout">Ieși</a>
+                </div>
+                <a th:if="${userEmail == null}" href="/login" class="btn-login">Autentificare</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cabinete Medicale Partenere</h1>
+            <p>Localizări în diferite orașe pentru servicii de kinetoterapie și recuperare</p>
+        </div>
+    </section>
+
+    <!-- Cabinete Section -->
+    <section class="cabinete-section">
+        <div class="container">
+            <h2 class="section-title">Rețeaua Noastră de Cabinete</h2>
+            <p class="section-subtitle">Găsiți cel mai apropiat cabinet și contactați specialiștii noștri</p>
+
+            <!-- Filtre pe orașe -->
+            <div class="cabinete-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-icon">🌍</span> Toate
+                </button>
+                <button class="filter-btn" data-filter="Craiova">
+                    <span class="filter-icon">📍</span> Craiova
+                </button>
+                <button class="filter-btn" data-filter="București">
+                    <span class="filter-icon">📍</span> București
+                </button>
+                <button class="filter-btn" data-filter="Cluj">
+                    <span class="filter-icon">📍</span> Cluj
+                </button>
+                <button class="filter-btn" data-filter="Timișoara">
+                    <span class="filter-icon">📍</span> Timișoara
+                </button>
+            </div>
+
+            <!-- Cabinete Cards Grid -->
+            <div class="cabinete-grid">
+                <article class="cabinet-card" th:each="cabinet : ${toateCabinetele}" th:data-oras="${cabinet.oras}">
+                    <!-- Imagine -->
+                    <div class="cabinet-image">
+                        <img th:src="@{${cabinet.imagineUrl}}" th:alt="${cabinet.nume}" 
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22300%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2218%22 fill=%22%23999%22%3ECabinet Medical%3C/text%3E%3C/svg%3E'">
+                    </div>
+
+                    <!-- Conținut Card -->
+                    <div class="cabinet-content">
+                        <!-- Header Card -->
+                        <div class="cabinet-header">
+                            <span class="cabinet-oras" th:text="${cabinet.oras}">Oraș</span>
+                            <h3 class="cabinet-nume" th:text="${cabinet.nume}">Nume Cabinet</h3>
+                        </div>
+
+                        <!-- Descriere -->
+                        <p class="cabinet-descriere" th:text="${cabinet.descriere}">Descriere cabinet</p>
+
+                        <!-- Adresa -->
+                        <div class="cabinet-adresa">
+                            <span class="adresa-icon">📍</span>
+                            <p th:text="${cabinet.adresa}">Adresa completă</p>
+                        </div>
+
+                        <!-- Butoane -->
+                        <div class="cabinet-actions">
+                            <a th:href="${cabinet.googleMapsUrl}" target="_blank" class="btn-maps">
+                                <span class="maps-icon">🗺️</span> Vezi pe hartă
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ai nevoie de consiliere?</h2>
+            <p>Contactează-ne pentru o consultație gratuită la cel mai apropiat cabinet</p>
+            <a href="/#contact" class="btn-hero">Contactează-ne</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 KinetoShop. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <!-- Script pentru filtrare -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.cabinet-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Actualizează butonul activ
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Filtrează cardurile
+                    cards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const oras = card.getAttribute('data-oras');
+                            card.style.display = (oras === filter) ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

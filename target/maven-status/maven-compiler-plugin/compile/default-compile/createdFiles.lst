@@ -1,7 +1,7 @@
-ro/kineto/KinetoApplication.class
-ro/kineto/service/ServiciuService.class
 ro/kineto/service/ProdusService.class
-ro/kineto/model/Produs.class
 ro/kineto/model/Serviciu.class
 ro/kineto/controller/HomeController.class
+ro/kineto/KinetoApplication.class
+ro/kineto/service/ServiciuService.class
+ro/kineto/model/Produs.class
 ro/kineto/controller/ServiciiController.class
